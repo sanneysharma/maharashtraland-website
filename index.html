@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f5ec">
+<meta name="description" content="MaharashtraLand.com — land enquiries, sourcing and property opportunities across Maharashtra.">
+<title>MaharashtraLand.com | Find Land. Move Forward.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --forest:#214b36;--forest2:#2e6245;--leaf:#76966c;--lime:#c7d98d;
+ --sage:#e5ecdf;--sage2:#d4e0cf;--cream:#f7f6ef;--paper:#fffefa;
+ --ink:#24382c;--muted:#66786a;--line:#dce4d8;--clay:#b97955;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+.wrap{width:min(1180px,92%);margin:auto}
+.topbar{background:#e6eddf;color:#46614c;font-size:10px;letter-spacing:1.05px;text-transform:uppercase}
+.topbar-inner{min-height:34px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.topbar strong{color:var(--forest)}
+header{position:sticky;top:0;z-index:20;background:#fffed;backdrop-filter:blur(16px);border-bottom:1px solid #dfe5da}
+.nav{height:80px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;gap:10px;align-items:center}
+.logo{width:44px;height:44px;display:block}
+.brand-name{font-family:"Manrope",sans-serif;font-size:20px;line-height:1;font-weight:800;letter-spacing:-1.1px;color:var(--forest)}
+.brand-name span{color:var(--clay)}
+.brand small{display:block;font-size:8px;letter-spacing:2px;font-weight:700;color:#718275;margin-top:7px}
+nav{display:flex;gap:28px;font-size:12px;font-weight:600;color:#526856}
+nav a:hover{color:var(--clay)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-call{font-size:11px;font-weight:700;color:var(--forest)}
+.nav-btn{padding:12px 17px;border-radius:3px;background:var(--forest);color:#fff;font-size:11px;font-weight:700;letter-spacing:.4px}
+.menu{display:none;border:1px solid var(--line);background:transparent;padding:9px 12px;color:var(--forest);border-radius:4px}
+.hero{padding:60px 0 68px;overflow:hidden;background:var(--cream)}
+.hero-layout{display:grid;grid-template-columns:1.04fr .96fr;gap:44px;align-items:center}
+.hero-copy{padding:16px 0}
+.eyebrow{display:flex;align-items:center;gap:9px;color:var(--clay);text-transform:uppercase;font-size:10px;font-weight:800;letter-spacing:2px}
+.eyebrow:before{content:"";height:2px;width:24px;background:var(--clay)}
+h1{font-family:"Fraunces",Georgia,serif;font-size:clamp(48px,6vw,76px);line-height:.98;letter-spacing:-2.7px;font-weight:500;color:var(--forest);margin:22px 0}
+h1 em{font-style:normal;color:var(--clay)}
+.hero-copy p{font-size:15px;line-height:1.9;color:#637566;max-width:510px;margin:0 0 26px}
+.ctas{display:flex;gap:11px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 19px;border-radius:3px;font-size:12px;font-weight:700;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--forest);color:#fff;box-shadow:0 8px 22px #214b3622}
+.btn-alt{border:1px solid #bfcdbb;color:var(--forest)}
+.hero-foot{display:flex;gap:26px;margin-top:37px;flex-wrap:wrap}
+.hero-stat{border-left:2px solid var(--lime);padding-left:11px}
+.hero-stat b{display:block;font-family:"Manrope",sans-serif;font-size:14px;color:var(--forest)}
+.hero-stat span{font-size:10px;color:#748477}
+.hero-visual{position:relative;min-height:480px}
+.landscape{position:absolute;inset:0 30px 34px 0;overflow:hidden;border-radius:48% 48% 5px 5px;background:linear-gradient(150deg,#dfe9d9 0%,#bed2b4 46%,#89a982 100%)}
+.landscape:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 20%,#fff9d7 0 9%,transparent 10%),linear-gradient(0deg,#355c3e22,transparent 56%)}
+.landscape svg{position:absolute;inset:0;width:100%;height:100%}
+.landscape-tag{position:absolute;top:24px;left:25px;color:#355640;font-size:9px;font-weight:800;letter-spacing:2px}
+.visual-card{position:absolute;right:0;bottom:0;width:245px;background:#fffefa;padding:20px 21px;border:1px solid #dbe5d7;box-shadow:0 14px 38px #254a3020}
+.visual-card small{display:block;color:var(--clay);font-size:9px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}
+.visual-card strong{display:block;font-family:"Fraunces",serif;color:var(--forest);font-weight:500;font-size:25px;line-height:1.1;margin:10px 0}
+.visual-card a{font-size:10px;font-weight:800;color:var(--forest)}
+.side-stamp{position:absolute;right:11px;top:30px;width:86px;height:86px;border-radius:50%;background:var(--lime);display:grid;place-items:center;text-align:center;color:var(--forest);font-family:"Manrope",sans-serif;font-size:9px;font-weight:800;letter-spacing:1px;line-height:1.25;transform:rotate(8deg);border:5px solid #fff}
+.ticker{background:var(--forest);color:#f2f5ec;overflow:hidden}
+.ticker-inner{min-height:49px;display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap;font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}
+.ticker b{color:var(--lime);font-weight:700}
+section{padding:82px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:33px}
+.section-kicker{color:var(--clay);font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.section-head h2{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:clamp(35px,4.6vw,54px);line-height:1.03;letter-spacing:-1.5px;color:var(--forest);margin:11px 0 0}
+.section-head p{max-width:410px;color:#6d7b6e;font-size:13px;line-height:1.8;margin:0}
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.type-card{position:relative;min-height:258px;padding:20px;background:#fffefa;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;transition:.22s}
+.type-card:hover{transform:translateY(-5px);border-color:#9dbb97;box-shadow:0 15px 35px #264c3113}
+.type-top{display:flex;justify-content:space-between;align-items:center}
+.type-no{font-family:"Manrope",sans-serif;color:#95a88f;font-size:11px;font-weight:800}
+.type-icon{width:41px;height:41px;border-radius:50%;display:grid;place-items:center;background:#e9f0e5;color:var(--forest)}
+.type-icon svg{width:21px;height:21px}
+.type-card h3{font-family:"Manrope",sans-serif;font-size:17px;letter-spacing:-.4px;color:var(--forest);margin:0 0 6px}
+.type-card p{font-size:11px;line-height:1.7;color:#718073;margin:0}
+.type-link{display:flex;align-items:center;justify-content:space-between;color:var(--clay);font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-top:20px}
+.type-link b{font-size:17px}
+.feature{background:var(--sage);padding:72px 0}
+.feature-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.feature-left h2{font-family:"Fraunces",serif;font-size:clamp(37px,4.5vw,55px);line-height:1.03;font-weight:500;color:var(--forest);letter-spacing:-1.7px;margin:13px 0 18px}
+.feature-left p{font-size:13px;color:#657767;line-height:1.85;max-width:420px}
+.districts{display:flex;flex-wrap:wrap;gap:9px}
+.districts a{background:#f8faf4;border:1px solid #cbd9c7;padding:10px 14px;border-radius:30px;font-size:11px;font-weight:600;color:#45634b;transition:.2s}
+.districts a:hover{background:var(--forest);color:white;border-color:var(--forest)}
+.feature-note{margin-top:18px;color:#7b8a7c;font-size:10px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step-card{padding:24px 22px;background:#fffefa;border:1px solid var(--line);min-height:190px}
+.step-number{font-family:"Fraunces",serif;color:var(--clay);font-size:25px}
+.step-card h3{font-family:"Manrope",sans-serif;color:var(--forest);font-size:17px;margin:10px 0 7px}
+.step-card p{font-size:11px;color:#718073;line-height:1.8;margin:0}
+.contact{background:#e5ecdf;padding:80px 0}
+.contact-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:58px;align-items:start}
+.contact-copy h2{font-family:"Fraunces",serif;color:var(--forest);font-size:clamp(38px,4.8vw,56px);line-height:1.02;font-weight:500;letter-spacing:-1.7px;margin:13px 0 18px}
+.contact-copy p{font-size:13px;color:#637566;line-height:1.85;max-width:390px}
+.contact-details{display:grid;gap:12px;margin-top:28px;font-size:13px;color:#4f6b55}
+.contact-details a{font-weight:700;color:var(--forest)}
+.enquiry{background:#fffefa;border:1px solid #d5e1d2;padding:29px;box-shadow:0 18px 45px #214b3612}
+.enquiry h3{font-family:"Manrope",sans-serif;color:var(--forest);font-size:22px;margin:0 0 3px}
+.enquiry .sub{font-size:11px;color:#7b897d;margin:0 0 19px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:10px;font-weight:800;letter-spacing:.35px;color:#536b58;margin-bottom:12px}
+input,select,textarea{width:100%;display:block;margin-top:6px;padding:12px 11px;border:1px solid #d7e0d4;background:#fffefa;border-radius:2px;color:#284a34;font-size:12px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#82a77b;box-shadow:0 0 0 3px #82a77b19}
+textarea{min-height:89px;resize:vertical}
+.submit{width:100%;padding:15px;background:var(--forest);color:white;border:0;border-radius:2px;font-size:11px;font-weight:800;letter-spacing:.9px;cursor:pointer}
+.submit:hover{background:var(--forest2)}
+.form-note{font-size:9px;color:#809082;margin-top:9px}
+footer{background:#214b36;color:#dce8da;padding:24px 0;font-size:10px}
+.footer-row{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.disclaimer{max-width:940px;color:#b8ccb7;line-height:1.7;margin-top:10px}
+.float-wa{position:fixed;right:20px;bottom:20px;z-index:25;background:#287a4e;color:white;border-radius:30px;padding:12px 17px;box-shadow:0 9px 24px #1d593c40;font-size:11px;font-weight:800}
+@media(max-width:930px){nav{gap:15px}.types{grid-template-columns:repeat(2,1fr)}.hero-layout{gap:25px}}
+@media(max-width:720px){
+ .topbar-inner{justify-content:center}.topbar-inner span:last-child{display:none}
+ .nav{height:69px}.nav-call,.nav-btn{display:none}.menu{display:block}
+ nav{display:none;position:absolute;top:69px;left:0;right:0;background:#fff;padding:19px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:17px}
+ nav.open{display:flex}
+ .hero{padding:43px 0 53px}.hero-layout{grid-template-columns:1fr}
+ h1{font-size:clamp(48px,12vw,68px);letter-spacing:-2px}
+ .hero-visual{min-height:390px;margin-top:5px}.landscape{right:22px}
+ .section-head{display:block}.section-head p{margin-top:14px}
+ section{padding:62px 0}
+ .feature-grid,.contact-grid{grid-template-columns:1fr;gap:30px}
+ .steps{grid-template-columns:1fr;gap:12px}
+ .feature{padding:62px 0}
+}
+@media(max-width:480px){
+ .types{grid-template-columns:1fr 1fr;gap:9px}
+ .type-card{padding:14px;min-height:235px}
+ .type-card h3{font-size:15px}
+ .type-card p{font-size:10px}
+ .type-icon{width:35px;height:35px}
+ .hero-visual{min-height:330px}
+ .visual-card{width:205px;padding:15px}
+ .visual-card strong{font-size:21px}
+ .side-stamp{width:72px;height:72px;font-size:8px;right:3px}
+ .form-row{grid-template-columns:1fr}
+ .enquiry{padding:20px}
+ .float-wa{right:12px;bottom:12px;padding:11px 14px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* WHITE + BOOK ANTIQUA EDITION */
+:root{
+ --forest:#214b36;--forest2:#2e6245;--leaf:#76966c;--lime:#c7d98d;
+ --sage:#f3f7f1;--sage2:#e8f0e5;--cream:#ffffff;--paper:#ffffff;
+ --ink:#24382c;--muted:#66786a;--line:#e1e8df;--clay:#a96f4e;
+}
+html,body{background:#fff;color:var(--ink)}
+body,button,input,select,textarea{
+ font-family:"Book Antiqua","Palatino Linotype",Palatino,Georgia,serif;
+}
+header{background:#ffffffed;border-bottom:1px solid #e2e9e0}
+.brand-name,nav,.nav-call,.nav-btn,.topbar,.eyebrow,.section-kicker,
+.type-no,.type-link,.step-card .step-number,label,.submit,.form-note,
+.visual-card small,.visual-card a,.side-stamp,.ticker,.districts a,
+.float-wa,.topbar-inner,.brand small{
+ font-family:"Book Antiqua","Palatino Linotype",Palatino,Georgia,serif;
+}
+.brand-name{font-size:21px;letter-spacing:-.4px}
+.brand small{letter-spacing:1.4px}
+.hero{background:#fff}
+.hero-copy p,.section-head p,.feature-left p,.step-card p,.contact-copy p,
+.type-card p,.disclaimer{font-family:"Book Antiqua","Palatino Linotype",Palatino,Georgia,serif}
+.hero-visual .landscape{background:linear-gradient(150deg,#e7f0e4 0%,#c9dec6 46%,#9db99b 100%)}
+.hero-visual .landscape:before{background:radial-gradient(circle at 72% 20%,#fff9d7 0 9%,transparent 10%),linear-gradient(0deg,#355c3e18,transparent 56%)}
+.side-stamp{background:#dfead8;border-color:#fff}
+.visual-card{background:#fff;border-color:#e1e8df}
+.ticker{background:#f1f6ef;color:#365943;border-top:1px solid #e0e9dd;border-bottom:1px solid #e0e9dd}
+.ticker b{color:#a96f4e}
+section{background:#fff}
+.feature{background:#fff;border-top:1px solid #edf1eb;border-bottom:1px solid #edf1eb}
+.districts a{background:#fff;border:1px solid #dce6d9;color:#45634b}
+.districts a:hover{background:#214b36;color:#fff}
+.type-card,.step-card,.enquiry{background:#fff;border-color:#e1e8df}
+.type-card:hover{box-shadow:0 15px 35px #214b3610}
+.contact{background:#fff;border-top:1px solid #e7ece5}
+.contact-copy h2,.section-head h2,.feature-left h2{color:#214b36}
+.enquiry{box-shadow:0 18px 45px #214b360d}
+footer{background:#fff;color:#506451;border-top:1px solid #e1e8df}
+.disclaimer{color:#778679}
+.topbar{background:#f3f7f1;color:#526e58}
+.topbar strong{color:#214b36}
+.float-wa{background:#287a4e;color:white}
+
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap topbar-inner"><span><strong>MAHARASHTRALAND.COM</strong> &nbsp; · &nbsp; FIND LAND. MOVE FORWARD.</span><span>Speak with our team &nbsp; <strong>+91 78000 87887</strong></span></div></div>
+<header><div class="wrap nav">
+<a class="brand" href="#home" aria-label="MaharashtraLand.com home">
+<svg class="logo" viewBox="0 0 64 64" role="img" aria-label="Maharashtra Land emblem">
+<path d="M5 47 17 22l12 17 9-25 19 34" fill="none" stroke="#214b36" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7 53c15-7 32-8 51-2M14 59c13-5 26-5 39-1" fill="none" stroke="#b97955" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="49" cy="12" r="4.5" fill="#c7d98d"/><path d="M49 17v8" stroke="#b97955" stroke-width="2"/>
+</svg>
+<span><span class="brand-name">Maharashtra<span>Land</span>.com</span><small>FIND LAND · MOVE FORWARD</small></span>
+</a>
+<nav id="nav"><a href="#home">Home</a><a href="#land">Land Categories</a><a href="#locations">Locations</a><a href="#process">Our Process</a><a href="#contact">Contact</a></nav>
+<div class="nav-actions"><a class="nav-call" href="tel:+917800087887">78000 87887</a><a class="nav-btn" href="#contact">SHARE REQUIREMENT ↗</a><button class="menu" id="menu" aria-label="Toggle menu" aria-expanded="false">☰</button></div>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="wrap hero-layout">
+<div class="hero-copy"><div class="eyebrow">Land enquiries across Maharashtra</div>
+<h1>Good land.<br><em>New beginnings.</em></h1>
+<p>Whether you’re looking to buy, sell or explore a land opportunity, start with a clear brief. We help connect land requirements with conversations across Maharashtra.</p>
+<div class="ctas"><a class="btn btn-main" href="#contact">Share your requirement <span>↗</span></a><a class="btn btn-alt" href="https://wa.me/917800087887" target="_blank" rel="noopener">WhatsApp our team</a></div>
+<div class="hero-foot"><div class="hero-stat"><b>BUY</b><span>Find a property</span></div><div class="hero-stat"><b>SELL</b><span>Share your land</span></div><div class="hero-stat"><b>SOURCE</b><span>Describe your search</span></div></div>
+</div>
+<div class="hero-visual">
+<div class="landscape"><div class="landscape-tag">LANDSCAPE / MAHARASHTRA / INDIA</div>
+<svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<path d="M-40 370Q80 250 190 320T420 260T680 300V650H-40Z" fill="#6f966b" opacity=".8"/>
+<path d="M-20 420Q100 310 240 370T470 335T650 390V650H-20Z" fill="#527d59" opacity=".78"/>
+<path d="M-40 474Q90 386 220 433T470 407T650 440V650H-40Z" fill="#3e6b4c" opacity=".82"/>
+<path d="M-20 512Q90 455 210 500T430 470T640 510" fill="none" stroke="#d4e2bd" stroke-width="3" opacity=".8"/>
+<path d="M35 355 110 311 171 338 244 286 302 315 374 254 445 285 535 228" fill="none" stroke="#f7f6ef" stroke-width="2" opacity=".75"/>
+<path d="M72 118 182 90 227 156 189 249 94 260 48 190Z" fill="#f0f4df" fill-opacity=".32" stroke="#f8f8ee" stroke-width="2"/>
+<path d="m182 90 106-34 70 75-39 88-130 30 38-93Z" fill="#f0f4df" fill-opacity=".27" stroke="#f8f8ee" stroke-width="2"/>
+<path d="m319 131 112-43 64 79-45 96-131-44Z" fill="#f0f4df" fill-opacity=".22" stroke="#f8f8ee" stroke-width="2"/>
+<path d="M94 260 189 249 234 342 171 405 80 367Z" fill="#dbe9c9" fill-opacity=".18" stroke="#f8f8ee" stroke-width="2"/>
+<path d="m234 342 38-166 131 44 47 113-117 82-99-13Z" fill="#dbe9c9" fill-opacity=".16" stroke="#f8f8ee" stroke-width="2"/>
+<circle cx="304" cy="260" r="28" fill="#ffffff" fill-opacity=".25"/><circle cx="304" cy="260" r="9" fill="#fffefa"/>
+</svg>
+</div>
+<div class="side-stamp">MAHARASHTRA<br>LAND<br>ENQUIRIES</div>
+<div class="visual-card"><small>Start with a location</small><strong>Find the land that fits your plans.</strong><a href="#locations">EXPLORE LOCATIONS ↗</a></div>
+</div>
+</div></section>
+<div class="ticker"><div class="wrap ticker-inner"><span><b>01</b> Agricultural</span><span><b>02</b> NA Plots</span><span><b>03</b> Residential</span><span><b>04</b> Industrial</span><span><b>05</b> Land Sourcing</span></div></div>
+<section id="land"><div class="wrap">
+<div class="section-head"><div><div class="section-kicker">Explore land categories</div><h2>One state. Many kinds<br>of opportunity.</h2></div><p>Different land requirements call for different conversations. Choose a category to tell us what you are looking for.</p></div>
+<div class="types">
+<a class="type-card" href="#contact"><div class="type-top"><span class="type-no">01 / AGRI</span><span class="type-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21V9m0 4c-5 0-8-3-8-8 5 0 8 3 8 8Zm0 3c0-5 3-8 8-8 0 5-3 8-8 8Z"/></svg></span></div><div><h3>Agricultural Land</h3><p>Farmland and rural parcels for agriculture-related requirements.</p></div><div class="type-link">View category <b>↗</b></div></a>
+<a class="type-card" href="#contact"><div class="type-top"><span class="type-no">02 / NA</span><span class="type-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m3 7 9-4 9 4-9 4-9-4Zm0 5 9 4 9-4M3 17l9 4 9-4"/></svg></span></div><div><h3>NA Plots</h3><p>Non-agricultural land and plot requirements, subject to approvals.</p></div><div class="type-link">View category <b>↗</b></div></a>
+<a class="type-card" href="#contact"><div class="type-top"><span class="type-no">03 / HOME</span><span class="type-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m3 11 9-8 9 8v10h-6v-6H9v6H3V11Z"/></svg></span></div><div><h3>Residential Land</h3><p>Plots and locations for homes and residential development.</p></div><div class="type-link">View category <b>↗</b></div></a>
+<a class="type-card" href="#contact"><div class="type-top"><span class="type-no">04 / WORK</span><span class="type-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V8l9-5 9 5v13M8 21v-6h8v6M7 10h.01M12 10h.01M17 10h.01"/></svg></span></div><div><h3>Industrial Land</h3><p>Industrial, warehousing and logistics land requirements.</p></div><div class="type-link">View category <b>↗</b></div></a>
+</div></div></section>
+<section class="feature" id="locations"><div class="wrap feature-grid">
+<div class="feature-left"><div class="section-kicker">Location is the starting point</div><h2>Where in Maharashtra<br>are you looking?</h2><p>Tell us the district, taluka or village you have in mind. You can also mention nearby locations you would consider.</p><div class="feature-note">Examples below — enquiries from other districts are welcome.</div></div>
+<div class="districts"><a href="#contact">Mumbai</a><a href="#contact">Thane</a><a href="#contact">Palghar</a><a href="#contact">Raigad</a><a href="#contact">Pune</a><a href="#contact">Nashik</a><a href="#contact">Satara</a><a href="#contact">Kolhapur</a><a href="#contact">Ratnagiri</a><a href="#contact">Sindhudurg</a><a href="#contact">Sangli</a><a href="#contact">Solapur</a><a href="#contact">Other districts ↗</a></div>
+</div></section>
+<section id="process"><div class="wrap"><div class="section-head"><div><div class="section-kicker">How it works</div><h2>Clear conversations.<br>Careful decisions.</h2></div><p>We help you begin with a clear property brief. Before any commitment, independently check the legal, technical and financial details of the land.</p></div>
+<div class="steps"><article class="step-card"><div class="step-number">01</div><h3>Share your requirement</h3><p>Tell us whether you want to buy, sell or source land, including location, area and budget.</p></article><article class="step-card"><div class="step-number">02</div><h3>Connect with our team</h3><p>We’ll get in touch to understand the details and discuss the next steps for your enquiry.</p></article><article class="step-card"><div class="step-number">03</div><h3>Verify before proceeding</h3><p>Have ownership, title, zoning, access and permissions independently reviewed by qualified professionals.</p></article></div>
+</div></section>
+<section class="contact" id="contact"><div class="wrap contact-grid">
+<div class="contact-copy"><div class="section-kicker">Let’s talk land</div><h2>Tell us what<br>you have in mind.</h2><p>Complete the enquiry form and continue to WhatsApp. Your details will be arranged into a message so you can review it before sending.</p><div class="contact-details"><div>Call / WhatsApp: <a href="https://wa.me/917800087887">+91 78000 87887</a></div><div>Email: <a href="mailto:maharashtralanddeals@gmail.com">maharashtralanddeals@gmail.com</a></div></div></div>
+<form class="enquiry" id="waForm"><h3>Land enquiry form</h3><p class="sub">Tell us a little about your requirement.</p>
+<div class="form-row"><label>Your name *<input name="name" required placeholder="Full name"></label><label>Mobile number *<input name="mobile" type="tel" pattern="[0-9]{10}" maxlength="10" required placeholder="10-digit number"></label></div>
+<div class="form-row"><label>Enquiry type *<select name="purpose" required><option value="">Select</option><option>Buying land</option><option>Selling land</option><option>Land sourcing</option><option>Investment enquiry</option><option>Other</option></select></label><label>Land category *<select name="category" required><option value="">Select</option><option>Agricultural land</option><option>NA plot</option><option>Residential land</option><option>Industrial land</option><option>Commercial land</option><option>Other</option></select></label></div>
+<div class="form-row"><label>Preferred location<input name="location" placeholder="District / taluka / village"></label><label>Area / budget<input name="budget" placeholder="e.g. 2 acres / ₹50 lakh"></label></div>
+<label>Requirement details *<textarea name="message" required placeholder="Describe the land you are looking for..."></textarea></label>
+<button class="submit" type="submit">CONTINUE TO WHATSAPP &nbsp; ↗</button><div class="form-note">WhatsApp opens with your message ready. You can review it before pressing Send.</div>
+</form></div></section>
+</main>
+<footer><div class="wrap"><div class="footer-row"><span>© <span id="year"></span> MaharashtraLand.com</span><span>+91 78000 87887 · maharashtralanddeals@gmail.com</span></div><div class="disclaimer">MaharashtraLand.com is an enquiry platform. Property ownership, title, availability, approvals, zoning, permissions and investment outcomes are not guaranteed. Buyers and sellers should independently verify all information and obtain qualified legal and technical advice before entering into a transaction.</div></div></footer>
+<a class="float-wa" href="https://wa.me/917800087887" target="_blank" rel="noopener">WhatsApp us ↗</a>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰';});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.textContent='☰';menu.setAttribute('aria-expanded','false');}));
+document.getElementById('waForm').addEventListener('submit',function(e){
+ e.preventDefault();const d=new FormData(this);const mobile=String(d.get('mobile')||'').replace(/\D/g,'');
+ if(!/^[0-9]{10}$/.test(mobile)){alert('Please enter a valid 10-digit mobile number.');return;}
+ const message=['Hello MaharashtraLand.com, I have a land enquiry.','','Name: '+d.get('name'),'Mobile: '+mobile,'Enquiry: '+d.get('purpose'),'Category: '+d.get('category'),'Location: '+(d.get('location')||'Not specified'),'Area / Budget: '+(d.get('budget')||'Not specified'),'Details: '+d.get('message')].join('\n');
+ window.open('https://wa.me/917800087887?text='+encodeURIComponent(message),'_blank','noopener');
+});
+</script>
+</body></html>
